@@ -277,6 +277,34 @@
             color: var(--text-light);
             margin-top: 0.25rem;
         }
+        /* 風險服務 */
+        .risk-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .risk-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 4px solid var(--primary);
+        }
+        .risk-card h4 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .risk-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .risk-card .risk-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
         /* 響應式 */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -387,13 +415,28 @@
         </div>
     </section>
 
-    <!-- 風險服務（預留） -->
+    <!-- 風險服務 -->
     <section id="risk" class="section">
         <div class="container">
             <h2 class="section-title">風險服務</h2>
             <p class="section-subtitle">監管動態追蹤與爭議事件預警</p>
-            <div class="image-placeholder" style="height: 300px;">
-                [風險服務區塊 - 預留]
+            
+            <div class="risk-features">
+                <div class="risk-card">
+                    <div class="risk-icon">🔔</div>
+                    <h4>監管動態追蹤</h4>
+                    <p>實時追蹤國內外ESG相關政策法規變化，第一時間解讀新規要求，幫助企業提前做好合規準備。</p>
+                </div>
+                <div class="risk-card">
+                    <div class="risk-icon">⚠️</div>
+                    <h4>爭議事件預警</h4>
+                    <p>監控企業ESG爭議事件，及時預警潛在風險，幫助企業規避聲譽損害和監管處罰。</p>
+                </div>
+                <div class="risk-card">
+                    <div class="risk-icon">📋</div>
+                    <h4>合規風險評估</h4>
+                    <p>定期評估企業ESG合規狀況，識別薄弱環節，提供整改建議和應對方案。</p>
+                </div>
             </div>
         </div>
     </section>
