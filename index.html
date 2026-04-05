@@ -305,6 +305,70 @@
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
+        /* 行業方案 */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .industry-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+        }
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .industry-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.25rem 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .industry-body {
+            padding: 1.5rem;
+        }
+        .industry-body p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        /* 關於我們 */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-content p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .about-features {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .about-feature {
+            text-align: center;
+            padding: 1rem 1.5rem;
+        }
+        .about-feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .about-feature-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
         /* 響應式 */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -441,22 +505,63 @@
         </div>
     </section>
 
-    <!-- 行業方案（預留） -->
+    <!-- 行業方案 -->
     <section id="industries" class="section section-bg">
         <div class="container">
             <h2 class="section-title">行業方案</h2>
-            <div class="image-placeholder" style="height: 400px;">
-                [行業方案區塊 - 預留]
+            <p class="section-subtitle">針對重點行業的專業ESG解決方案</p>
+            
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-header">🏭 鋼鐵行業</div>
+                    <div class="industry-body">
+                        <p>碳核算與數據存證、超低排放改造合規、ESG體系建設，應對招投標及限產管控要求，幫助企業守住合規底線。</p>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-header">🚢 外貿進出口</div>
+                    <div class="industry-body">
+                        <p>碳足跡核算與追溯、綠色供應鏈合規，應對CBAM清關要求，規避貿易壁壘風險，滿足歐盟跨境合規要求。</p>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-header">🏗️ 建築行業</div>
+                    <div class="industry-body">
+                        <p>全生命週期碳核算、綠色建材應用、安全生產與勞工權益合規，對接招投標資質要求，滿足政策准入門檻。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 關於我們（預留） -->
+    <!-- 關於我們 -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">關於凌朝智綠</h2>
-            <div class="image-placeholder" style="height: 200px;">
-                [關於我們 - 預留]
+            <p class="section-subtitle">專注中國企業ESG合規轉型</p>
+            
+            <div class="about-content">
+                <p>凌朝智綠專注於幫助中國企業應對ESG合規轉型，從政策強制要求出發，落地可執行的解決方案，兼顧合規成本優化，幫助企業把ESG從合規成本轉化為競爭優勢。</p>
+                <p>我們深耕政策研究，緊跟國際國內最新監管動態，為不同規模企業提供量身定制的服務。</p>
+                
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">🎯</div>
+                        <div class="about-feature-text">務實落地</div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">📚</div>
+                        <div class="about-feature-text">政策研究</div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">🌏</div>
+                        <div class="about-feature-text">國際視野</div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">💼</div>
+                        <div class="about-feature-text">定製服務</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
