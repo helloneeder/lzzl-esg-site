@@ -164,19 +164,58 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             transition: all 0.3s;
             border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s;
         }
         .service-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
         .service-card h3 {
-            color: var(--primary);
+            color: var(--text-dark);
             margin-bottom: 0.75rem;
             font-size: 1.2rem;
+            font-weight: 600;
         }
         .service-card p {
             color: var(--text-light);
             font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .service-card .service-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            font-weight: 500;
         }
         /* 圖片預留 */
         .image-placeholder {
@@ -233,20 +272,28 @@
             <!-- 預留 -->
             <div class="services-grid">
                 <div class="service-card">
+                    <div class="service-icon">📊</div>
                     <h3>ESG報告編制</h3>
-                    <p>編制符合滬深北交易所及GRI標準的可持續發展報告</p>
+                    <p>根據企業規模和監管要求，編制符合滬深北交易所及GRI標準的可持續發展報告。覆蓋上市公司及中小企業精簡版報告。</p>
+                    <span class="service-tag">上市公司首選</span>
                 </div>
                 <div class="service-card">
+                    <div class="service-icon">🏗️</div>
                     <h3>合規體系建設</h3>
-                    <p>搭建ESG治理架構，梳理合規數據底座，落實雙碳目標</p>
+                    <p>幫企業搭建ESG治理架構，梳理合規數據底座，對接國內環境法典合規要求，落實雙碳目標落地。</p>
+                    <span class="service-tag">體系化服務</span>
                 </div>
                 <div class="service-card">
+                    <div class="service-icon">🌍</div>
                     <h3>出海合規諮詢</h3>
-                    <p>應對歐盟CBAM、CSRD、CSDDD等國際合規要求</p>
+                    <p>應對歐盟CBAM、CSRD、CSDDD等國際合規要求，幫助出口企業完成碳足跡核算與供應鏈ESG管理。</p>
+                    <span class="service-tag">出海必備</span>
                 </div>
                 <div class="service-card">
+                    <div class="service-icon">🌱</div>
                     <h3>碳核算與培訓</h3>
-                    <p>專業碳盤查與碳足跡核算，提供企業ESG能力建設培訓</p>
+                    <p>專業碳盤查與碳足跡核算，提供企業ESG能力建設培訓，培養內部團隊專業能力。</p>
+                    <span class="service-tag">能力建設</span>
                 </div>
             </div>
         </div>
