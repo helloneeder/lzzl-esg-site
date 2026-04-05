@@ -227,6 +227,56 @@
             color: #999;
             font-size: 0.9rem;
         }
+        /* 數據服務 */
+        .data-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .data-feature {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .data-feature h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .data-feature p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .data-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .data-stat {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            flex: 1;
+            min-width: 150px;
+        }
+        .data-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .data-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
         /* 響應式 */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -299,13 +349,40 @@
         </div>
     </section>
 
-    <!-- 數據服務（預留） -->
+    <!-- 數據服務 -->
     <section id="data" class="section section-bg">
         <div class="container">
             <h2 class="section-title">數據服務</h2>
-            <p class="section-subtitle">企業ESG評級與行業對標</p>
-            <div class="image-placeholder" style="height: 300px;">
-                [數據服務區塊 - 預留]
+            <p class="section-subtitle">企業ESG評級與行業對標分析</p>
+            
+            <div class="data-stats">
+                <div class="data-stat">
+                    <div class="data-stat-number">2000+</div>
+                    <div class="data-stat-label">覆蓋企業</div>
+                </div>
+                <div class="data-stat">
+                    <div class="data-stat-number">A~C</div>
+                    <div class="data-stat-label">九檔評級</div>
+                </div>
+                <div class="data-stat">
+                    <div class="data-stat-number">50+</div>
+                    <div class="data-stat-label">指標維度</div>
+                </div>
+            </div>
+            
+            <div class="data-features">
+                <div class="data-feature">
+                    <h4>📈 企業ESG評級查詢</h4>
+                    <p>覆蓋A股、港股主流上市公司ESG評級數據，採用與國際接軌的評級方法論，幫助企業了解自身ESG表現在行業中的位置。</p>
+                </div>
+                <div class="data-feature">
+                    <h4>🎯 行業對標分析</h4>
+                    <p>提供同行業ESG表現對比分析，識別差距與改進空間，為企業制定ESG提升策略提供數據支撐。</p>
+                </div>
+                <div class="data-feature">
+                    <h4>📊 多維度數據報告</h4>
+                    <p>從環境、社會、治理三個維度拆解評分因素，提供細顆粒度數據報告，助力精準決策。</p>
+                </div>
             </div>
         </div>
     </section>
