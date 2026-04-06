@@ -3,584 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>凌朝智绿 - 专业ESG合规与可持续发展咨询</title>
+    <title>每日ESG新闻精选 - 2026年4月6日</title>
     <style>
-        :root {
-            --primary: #2e7d32;
-            --primary-dark: #1b5e20;
-            --primary-light: #e8f5e9;
-            --accent: #00a86b;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --white: #ffffff;
-            --bg-light: #f8fafc;
-            --bg-offset: #f1f5f9;
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
         }
-        * {
+        .news-header {
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+        .news-header h1 {
+            color: #333;
+            font-size: 28px;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
+        .news-date {
+            color: #888;
+            font-size: 14px;
+            margin-top: 10px;
         }
-        /* 导航 */
-        nav {
-            background: var(--white);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        .news-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
         }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
-        .logo-placeholder {
-            width: 180px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-light), #c8e6c9);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 1.1rem;
+        .news-item h2 {
+            color: #2c5aa0;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
         }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+        .news-meta {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 12px;
         }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        /* Hero 區域 */
-        .hero {
-            background: linear-gradient(145deg, var(--white) 0%, var(--primary-light) 100%);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        .hero-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            line-height: 1.2;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.9rem 2.2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
-        }
-        .btn-secondary {
-            background: var(--white);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        .btn-secondary:hover {
-            background: var(--primary-light);
-        }
-        /* 區塊通用 */
-        .section {
-            padding: 4rem 2rem;
-        }
-        .section-bg {
-            background: var(--bg-light);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-        /* 服務卡片 */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: all 0.3s;
-            border: 1px solid #eee;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--primary);
-            transform: scaleY(0);
-            transition: transform 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-        .service-card:hover::before {
-            transform: scaleY(1);
-        }
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--primary-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.25rem;
-        }
-        .service-card h3 {
-            color: var(--text-dark);
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
+        .news-summary {
+            color: #444;
+            font-size: 16px;
             line-height: 1.7;
-        }
-        .service-card .service-tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            margin-top: 1rem;
-            font-weight: 500;
-        }
-        /* 圖片預留 */
-        .image-placeholder {
-            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 0.9rem;
-        }
-        /* 數據服務 */
-        .data-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .data-feature {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .data-feature h4 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .data-feature p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .data-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        .data-stat {
-            text-align: center;
-            padding: 1.5rem 2rem;
-            background: var(--white);
-            border-radius: 12px;
-            flex: 1;
-            min-width: 150px;
-        }
-        .data-stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        .data-stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: 0.25rem;
-        }
-        /* 風險服務 */
-        .risk-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .risk-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 1.75rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border-left: 4px solid var(--primary);
-        }
-        .risk-card h4 {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-        .risk-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .risk-card .risk-icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        /* 行業方案 */
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .industry-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: all 0.3s;
-        }
-        .industry-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-        .industry-header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1.25rem 1.5rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .industry-body {
-            padding: 1.5rem;
-        }
-        .industry-body p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        /* 關於我們 */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .about-content p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .about-features {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        .about-feature {
-            text-align: center;
-            padding: 1rem 1.5rem;
-        }
-        .about-feature-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        .about-feature-text {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        /* 響應式 */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1.1rem; }
-            .section { padding: 3rem 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- 導航 -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo-placeholder">[Logo預留位置]</div>
-            <ul class="nav-links">
-                <li><a href="#services">核心服務</a></li>
-                <li><a href="#data">數據服務</a></li>
-                <li><a href="#risk">風險服務</a></li>
-                <li><a href="#industries">行業方案</a></li>
-                <li><a href="#about">關於我們</a></li>
-                <li><a href="#contact">聯繫我們</a></li>
-            </ul>
+    <div class="news-container">
+        <div class="news-header">
+            <h1>每日ESG新闻精选</h1>
+            <div class="news-date">发布日期：2026年4月6日</div>
         </div>
-    </nav>
 
-    <!-- Hero 區域 -->
-    <section class="hero">
-        <div class="hero-container">
-            <h1>從合規到價值<br>助力企業可持續發展</h1>
-            <p>凌朝智綠幫助中國企業應對ESG合規轉型，兼顧國內外監管要求，把合規成本轉化為競爭優勢</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">諮詢合作</a>
-                <a href="#services" class="btn btn-secondary">了解更多</a>
+        <div class="news-item">
+            <h2>欧盟推出ETS碳市场改革首项措施应对行业压力</h2>
+            <div class="news-meta">来源：ESG Today | 发布日期：2026年4月2日</div>
+            <div class="news-summary">
+                <p>欧盟委员会宣布对欧盟碳排放交易体系（ETS）推出首项改革提案，旨在缓解工业界因能源成本飙升和碳价上涨带来的压力。ETS作为欧盟自2005年建立的碳定价机制，成功推动了欧盟自2019年以来减排39%同时实现经济增长71%。</p>
+                <p>此次改革重点针对市场稳定储备机制（MSR），拟停止自动注销超过4亿配额的做法，改为将多余配额作为缓冲储备以应对价格上涨。完整改革计划将于2026年7月推出。</p>
             </div>
         </div>
-    </section>
 
-    <!-- 核心服務（預留，未完成） -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">核心服務</h2>
-            <p class="section-subtitle">全方位ESG解決方案</p>
-            <!-- 預留 -->
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>ESG報告編制</h3>
-                    <p>根據企業規模和監管要求，編制符合滬深北交易所及GRI標準的可持續發展報告。覆蓋上市公司及中小企業精簡版報告。</p>
-                    <span class="service-tag">上市公司首選</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏗️</div>
-                    <h3>合規體系建設</h3>
-                    <p>幫企業搭建ESG治理架構，梳理合規數據底座，對接國內環境法典合規要求，落實雙碳目標落地。</p>
-                    <span class="service-tag">體系化服務</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌍</div>
-                    <h3>出海合規諮詢</h3>
-                    <p>應對歐盟CBAM、CSRD、CSDDD等國際合規要求，幫助出口企業完成碳足跡核算與供應鏈ESG管理。</p>
-                    <span class="service-tag">出海必備</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>碳核算與培訓</h3>
-                    <p>專業碳盤查與碳足跡核算，提供企業ESG能力建設培訓，培養內部團隊專業能力。</p>
-                    <span class="service-tag">能力建設</span>
-                </div>
+        <div class="news-item">
+            <h2>雀巢与ILO合作改善咖啡供应链人权状况</h2>
+            <div class="news-meta">来源：ESG Today | 发布日期：2026年4月1日</div>
+            <div class="news-summary">
+                <p>全球食品饮料巨头雀巢与国际劳工组织（ILO）宣布启动一项为期两年的新项目，旨在推进咖啡供应链中的人权保护。该项目将聚焦咖啡种植环节，着力改善供应链劳工条件，促进国际人权标准实施，提升整个产业链透明度。</p>
             </div>
         </div>
-    </section>
 
-    <!-- 數據服務 -->
-    <section id="data" class="section section-bg">
-        <div class="container">
-            <h2 class="section-title">數據服務</h2>
-            <p class="section-subtitle">企業ESG評級與行業對標分析</p>
-            
-            <div class="data-stats">
-                <div class="data-stat">
-                    <div class="data-stat-number">2000+</div>
-                    <div class="data-stat-label">覆蓋企業</div>
-                </div>
-                <div class="data-stat">
-                    <div class="data-stat-number">A~C</div>
-                    <div class="data-stat-label">九檔評級</div>
-                </div>
-                <div class="data-stat">
-                    <div class="data-stat-number">50+</div>
-                    <div class="data-stat-label">指標維度</div>
-                </div>
-            </div>
-            
-            <div class="data-features">
-                <div class="data-feature">
-                    <h4>📈 企業ESG評級查詢</h4>
-                    <p>覆蓋A股、港股主流上市公司ESG評級數據，採用與國際接軌的評級方法論，幫助企業了解自身ESG表現在行業中的位置。</p>
-                </div>
-                <div class="data-feature">
-                    <h4>🎯 行業對標分析</h4>
-                    <p>提供同行業ESG表現對比分析，識別差距與改進空間，為企業制定ESG提升策略提供數據支撐。</p>
-                </div>
-                <div class="data-feature">
-                    <h4>📊 多維度數據報告</h4>
-                    <p>從環境、社會、治理三個維度拆解評分因素，提供細顆粒度數據報告，助力精準決策。</p>
-                </div>
+        <div class="news-item">
+            <h2>美国能源部与亚马逊合作从废弃物中回收关键材料</h2>
+            <div class="news-meta">来源：ESG Today | 发布日期：2026年3月31日</div>
+            <div class="news-summary">
+                <p>美国能源部埃姆斯国家实验室与关键材料创新中心（CMI）和亚马逊展开合作，共同开发从旧衣物和电子垃圾中回收关键材料技术。这项合作将有力推动循环经济发展，减少对原生矿产开采依赖，保障清洁能源转型所需关键材料的稳定供应。</p>
             </div>
         </div>
-    </section>
 
-    <!-- 風險服務 -->
-    <section id="risk" class="section">
-        <div class="container">
-            <h2 class="section-title">風險服務</h2>
-            <p class="section-subtitle">監管動態追蹤與爭議事件預警</p>
-            
-            <div class="risk-features">
-                <div class="risk-card">
-                    <div class="risk-icon">🔔</div>
-                    <h4>監管動態追蹤</h4>
-                    <p>實時追蹤國內外ESG相關政策法規變化，第一時間解讀新規要求，幫助企業提前做好合規準備。</p>
-                </div>
-                <div class="risk-card">
-                    <div class="risk-icon">⚠️</div>
-                    <h4>爭議事件預警</h4>
-                    <p>監控企業ESG爭議事件，及時預警潛在風險，幫助企業規避聲譽損害和監管處罰。</p>
-                </div>
-                <div class="risk-card">
-                    <div class="risk-icon">📋</div>
-                    <h4>合規風險評估</h4>
-                    <p>定期評估企業ESG合規狀況，識別薄弱環節，提供整改建議和應對方案。</p>
-                </div>
+        <div class="news-item">
+            <h2>Novisto收购碳核算软件公司Minimum增强ESG能力</h2>
+            <div class="news-meta">来源：ESG Today | 发布日期：2026年3月31日</div>
+            <div class="news-summary">
+                <p>可持续发展报告软件提供商Novisto宣布收购碳管理软件公司Minimum。本次收购旨在增强其碳核算能力，扩张ESG数据管理服务范围，帮助企业更好地应对全球日益严格的碳披露监管要求。</p>
             </div>
         </div>
-    </section>
 
-    <!-- 行業方案 -->
-    <section id="industries" class="section section-bg">
-        <div class="container">
-            <h2 class="section-title">行業方案</h2>
-            <p class="section-subtitle">針對重點行業的專業ESG解決方案</p>
-            
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <div class="industry-header">🏭 鋼鐵行業</div>
-                    <div class="industry-body">
-                        <p>碳核算與數據存證、超低排放改造合規、ESG體系建設，應對招投標及限產管控要求，幫助企業守住合規底線。</p>
-                    </div>
-                </div>
-                <div class="industry-card">
-                    <div class="industry-header">🚢 外貿進出口</div>
-                    <div class="industry-body">
-                        <p>碳足跡核算與追溯、綠色供應鏈合規，應對CBAM清關要求，規避貿易壁壘風險，滿足歐盟跨境合規要求。</p>
-                    </div>
-                </div>
-                <div class="industry-card">
-                    <div class="industry-header">🏗️ 建築行業</div>
-                    <div class="industry-body">
-                        <p>全生命週期碳核算、綠色建材應用、安全生產與勞工權益合規，對接招投標資質要求，滿足政策准入門檻。</p>
-                    </div>
-                </div>
+        <div class="news-item">
+            <h2>丰田计划加入沃尔沃与戴姆勒氢燃料电池合资企业</h2>
+            <div class="news-meta">来源：ESG Today | 发布日期：2026年3月31日</div>
+            <div class="news-summary">
+                <p>沃尔沃集团、戴姆勒卡车和丰田汽车签署不具约束力协议，丰田将加入双方已建立的氢燃料电池合资企业。三大汽车巨头联手加速氢燃料电池技术的商业化开发，共同推动商用车领域脱碳进程，促进氢能在重型运输领域的广泛应用。</p>
             </div>
         </div>
-    </section>
 
-    <!-- 關於我們 -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">關於凌朝智綠</h2>
-            <p class="section-subtitle">專注中國企業ESG合規轉型</p>
-            
-            <div class="about-content">
-                <p>凌朝智綠專注於幫助中國企業應對ESG合規轉型，從政策強制要求出發，落地可執行的解決方案，兼顧合規成本優化，幫助企業把ESG從合規成本轉化為競爭優勢。</p>
-                <p>我們深耕政策研究，緊跟國際國內最新監管動態，為不同規模企業提供量身定制的服務。</p>
-                
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="about-feature-icon">🎯</div>
-                        <div class="about-feature-text">務實落地</div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">📚</div>
-                        <div class="about-feature-text">政策研究</div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">🌏</div>
-                        <div class="about-feature-text">國際視野</div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">💼</div>
-                        <div class="about-feature-text">定製服務</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 聯繫我們 -->
-    <section id="contact" class="section" style="background: var(--text-dark); color: var(--white);">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title" style="color: var(--white);">聯繫我們</h2>
-            <div style="margin-top: 2rem; color: #aaa;">
-                <p>郵箱：contact@lzzl-esg.com</p>
-                <p>微信：請掃描企業微信添加諮詢</p>
-                <p>地址：中國·上海</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background: #0f172a; color: var(--text-light); text-align: center; padding: 1.5rem;">
-        <p>&copy; 2026 凌朝智綠 版權所有</p>
-    </footer>
+    </div>
 </body>
 </html>
