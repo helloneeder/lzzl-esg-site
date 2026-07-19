@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成功案例 - 凌朝智绿 | 让ESG变得简单可落地</title>
+    <style>
+        :root {
+            --primary: #15803d;
+            --primary-dark: #166534;
+            --primary-light: #22c55e;
+            --secondary: #1e40af;
+            --secondary-light: #3b82f6;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-offset: #f1f5f9;
+            --border: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        /* 导航栏 */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 1.75rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: #f0fdf4;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 50%, #f0fdf4 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .page-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Cases Section */
+        .cases-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-tab {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+        
+        .case-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .case-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-tag {
+            display: inline-block;
+            background: #dcfce7;
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .case-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        
+        .case-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .case-meta {
+            display: flex;
+            gap: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .case-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--bg-offset);
+            padding: 4rem 2rem;
+        }
+        
+        .stats-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .btn-large {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-brand h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>凌朝智绿</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">产品服务</a></li>
+                <li><a href="index.html#solutions">解决方案</a></li>
+                <li><a href="cases.html" class="active">成功案例</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="https://questionnaire.lzzl-esg.com/" target="_blank">数据平台</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn-small btn-secondary">登录</a>
+                <a href="index.html#contact" class="btn-small btn-primary">立即咨询</a>
+            </div>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>成功案例</h1>
+        <p>见证我们如何帮助客户实现可持续发展目标，创造绿色价值</p>
+    </section>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">首页</a> / <span>成功案例</span>
+    </div>
+    
+    <!-- Cases Section -->
+    <section class="cases-section">
+        <div class="filter-tabs">
+            <button class="filter-tab active">全部案例</button>
+            <button class="filter-tab">ESG报告</button>
+            <button class="filter-tab">碳管理</button>
+            <button class="filter-tab">供应链</button>
+            <button class="filter-tab">物业运营</button>
+        </div>
+        
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-image">🏢</div>
+                <div class="case-content">
+                    <span class="case-tag">ESG报告</span>
+                    <h3 class="case-title">某上市房地产企业ESG报告项目</h3>
+                    <p class="case-desc">协助客户完成首份ESG报告编制，通过MSCI评级从B提升至BB，获得资本市场高度认可。</p>
+                    <div class="case-meta">
+                        <div class="case-meta-item">📅 2024年</div>
+                        <div class="case-meta-item">🏆 MSCI BB级</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);">🏭</div>
+                <div class="case-content">
+                    <span class="case-tag">碳管理</span>
+                    <h3 class="case-title">制造业集团碳中和规划</h3>
+                    <p class="case-desc">为大型制造业集团制定碳中和路线图，识别减排机会，预计2030年实现碳减排30%。</p>
+                    <div class="case-meta">
+                        <div class="case-meta-item">📅 2024年</div>
+                        <div class="case-meta-item">🌍 -30%减排</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);">🔗</div>
+                <div class="case-content">
+                    <span class="case-tag">供应链</span>
+                    <h3 class="case-title">跨国企业供应链ESG合规项目</h3>
+                    <p class="case-desc">帮助客户建立供应链ESG管理体系，覆盖200+供应商，满足欧盟CSRD合规要求。</p>
+                    <div class="case-meta">
+                        <div class="case-meta-item">📅 2023年</div>
+                        <div class="case-meta-item">🤝 200+供应商</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #db2777 0%, #f472b6 100%);">🏘️</div>
+                <div class="case-content">
+                    <span class="case-tag">物业运营</span>
+                    <h3 class="case-title">大型物业集团绿色运营转型</h3>
+                    <p class="case-desc">为全国50+社区实施绿色运营改造，年度节能15%，获得国家级绿色建筑认证。</p>
+                    <div class="case-meta">
+                        <div class="case-meta-item">📅 2024年</div>
+                        <div class="case-meta-item">⚡ 节能15%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">🏨</div>
+                <div class="case-content">
+                    <span class="case-tag">酒店文旅</span>
+                    <h3 class="case-title">酒店连锁品牌可持续发展升级</h3>
+                    <p class="case-desc">协助12家高端酒店完成绿色认证，建立环保运营标准，客户满意度提升20%。</p>
+                    <div class="case-meta">
+                        <div class="case-meta-item">📅 2023年</div>
+                        <div class="case-meta-item">⭐ 绿色认证</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-image" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">💼</div>
+                <div class="case-content">
+                    <span class="case-tag">人力服务</span>
+                    <h3 class="case-title">人力资源企业ESG体系建设</h3>
+                    <p class="case-desc">为头部人力服务企业搭建ESG管理框架，发布行业首份ESG白皮书，树立标杆形象。</p>
+                    <div class="case-meta">
+                        <div class="case-meta-item">📅 2024年</div>
+                        <div class="case-meta-item">📖 行业首份</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">服务客户数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">80+</div>
+                <div class="stat-label">成功案例</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">客户满意度</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">行业覆盖</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">准备好开启您的ESG之旅了吗？</h2>
+            <p class="cta-desc">与我们的专家团队联系，获取专属ESG解决方案</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="btn-large btn-white">立即咨询</a>
+                <a href="tel:400-xxx-xxxx" class="btn-large btn-outline-white">电话咨询</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>🌱 凌朝智绿</h2>
+                    <p>专注于为企业提供ESG咨询与数字化解决方案，助力企业实现可持续发展。让ESG变得简单可落地。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="index.html#services">ESG报告编制</a></li>
+                        <li><a href="index.html#services">数据缺口分析</a></li>
+                        <li><a href="index.html#services">碳管理工具</a></li>
+                        <li><a href="index.html#services">供应链合规</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>解决方案</h4>
+                    <ul>
+                        <li><a href="index.html#solutions">物业运营</a></li>
+                        <li><a href="index.html#solutions">保安服务</a></li>
+                        <li><a href="index.html#solutions">人力服务</a></li>
+                        <li><a href="index.html#solutions">酒店文旅</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="cases.html">成功案例</a></li>
+                        <li><a href="index.html#about">公司介绍</a></li>
+                        <li><a href="index.html#contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 凌朝智绿. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Filter tabs functionality
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
