@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[3443,["/_next/static/chunks/1esz815x75qq5.js","/_next/static/chunks/0g9aexh07_gm9.js"],"default"]
-3:I[14770,["/_next/static/chunks/1esz815x75qq5.js","/_next/static/chunks/0g9aexh07_gm9.js"],"default"]
+2:I[18261,["/jewelry-static/_next/static/chunks/2fgfd45g_5033.js","/jewelry-static/_next/static/chunks/11a-s1b9wbg88.js"],"default"]
+3:I[30460,["/jewelry-static/_next/static/chunks/2fgfd45g_5033.js","/jewelry-static/_next/static/chunks/11a-s1b9wbg88.js"],"default"]
 4:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"UCjwb6D_dYF1E-nS7w-PA"}
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"FW_vQgRiG834ZTFwfPSSx"}
