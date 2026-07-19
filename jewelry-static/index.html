@@ -8,15 +8,15 @@
     <style>
         :root { 
             --gold: #D4AF37; 
-            --gold-dark: #B8960C; 
+            --gold-dark: #B8962E; 
             --gold-light: #F5E6A3;
-            --emerald: #0B6623;
-            --burgundy: #722F37;
+            --emerald: #B8962E;
+            --burgundy: #D4AF37;
             --platinum: linear-gradient(135deg, #E8E8E8, #C0C0C0, #A8A8A8);
         }
         body { 
-            background: #0A0A0A; 
-            color: white; 
+            background: #F5F5F0; 
+            color: #333333; 
             font-family: system-ui, -apple-system, sans-serif; 
             margin: 0;
             overflow-x: hidden;
@@ -42,22 +42,22 @@
         .light-1 {
             top: -200px;
             right: -100px;
-            background: radial-gradient(circle, rgba(212,175,55,0.8) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212,175,55,0.4) 0%, transparent 70%);
         }
         .light-2 {
             bottom: 10%;
             left: -200px;
-            background: radial-gradient(circle, rgba(11,102,35,0.6) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, transparent 70%);
         }
         .light-3 {
             top: 50%;
             right: -300px;
-            background: radial-gradient(circle, rgba(114,47,55,0.5) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(245,230,163,0.2) 0%, transparent 70%);
         }
         
         .btn-gold { 
             background: linear-gradient(135deg, #F5E6A3, #D4AF37, #B8960C); 
-            color: #0A0A0A; 
+            color: #F5F5F0; 
             padding: 14px 36px; 
             border: none; 
             font-weight: 500; 
@@ -82,7 +82,7 @@
         }
         .btn-gold:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.2);
         }
         .btn-outline { 
             background: transparent; 
@@ -93,19 +93,19 @@
         }
         .btn-outline:hover {
             background: #D4AF37;
-            color: #0A0A0A;
+            color: #F5F5F0;
         }
         .btn-emerald {
-            background: linear-gradient(135deg, #1a8a3d, #0B6623);
-            color: white;
+            background: linear-gradient(135deg, #E5C96B, #B8962E);
+            color: #333333;
             padding: 8px 16px;
             border: none;
             font-size: 12px;
             letter-spacing: 0.05em;
         }
         .btn-burgundy {
-            background: linear-gradient(135deg, #9a3f4a, #722F37);
-            color: white;
+            background: linear-gradient(135deg, #9a3f4a, #D4AF37);
+            color: #333333;
             padding: 8px 16px;
             border: none;
             font-size: 12px;
@@ -119,7 +119,7 @@
             justify-content: center; 
             text-align: center; 
             position: relative;
-            background: linear-gradient(180deg, #0A0A0A 0%, #111 50%, #0A0A0A 100%); 
+            background: linear-gradient(180deg, #F5F5F0 0%, #111 50%, #F5F5F0 100%); 
         }
         .hero::after {
             content: '';
@@ -139,7 +139,7 @@
             letter-spacing: 0.15em; 
             margin-bottom: 24px; 
             animation: fadeInUp 1.2s ease-out;
-            text-shadow: 0 0 60px rgba(212,175,55,0.3);
+            text-shadow: 0 0 60px rgba(212,175,55,0.2);
         }
         .hero p { 
             color: #888; 
@@ -192,19 +192,19 @@
         }
         .badge-featured {
             background: linear-gradient(135deg, #F5E6A3, #D4AF37);
-            color: #0A0A0A;
+            color: #F5F5F0;
         }
         .badge-new {
-            background: linear-gradient(135deg, #1a8a3d, #0B6623);
-            color: white;
+            background: linear-gradient(135deg, #E5C96B, #B8962E);
+            color: #333333;
         }
         .badge-limited {
-            background: linear-gradient(135deg, #9a3f4a, #722F37);
-            color: white;
+            background: linear-gradient(135deg, #9a3f4a, #D4AF37);
+            color: #333333;
         }
         .badge-diamond {
             background: var(--platinum);
-            color: #0A0A0A;
+            color: #F5F5F0;
         }
         
         .grid-3 { 
@@ -237,7 +237,7 @@
             transition: height 0.3s ease;
         }
         .card.diamond::before { background: var(--platinum); }
-        .card.emerald::before { background: linear-gradient(90deg, #1a8a3d, #0B6623); }
+        .card.emerald::before { background: linear-gradient(90deg, #E5C96B, #B8962E); }
         .card.gold::before { background: linear-gradient(90deg, #F5E6A3, #D4AF37); }
         .card:hover::before {
             height: 6px;
@@ -271,10 +271,10 @@
         .product-card:hover { 
             transform: translateY(-8px); 
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border-color: rgba(212,175,55,0.3);
+            border-color: rgba(212,175,55,0.2);
         }
         .product-card.emerald:hover { border-color: rgba(11,102,35,0.5); }
-        .product-card.burgundy:hover { border-color: rgba(114,47,55,0.5); }
+        .product-card.burgundy:hover { border-color: rgba(245,230,163,0.2); }
         
         .product-img { 
             aspect-ratio: 1; 
@@ -422,7 +422,7 @@
             gap: 48px; 
         }
         .nav-links a { 
-            color: white; 
+            color: #333333; 
             text-decoration: none; 
             font-size: 14px; 
             letter-spacing: 0.1em;
@@ -436,7 +436,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #D4AF37, #0B6623);
+            background: linear-gradient(90deg, #D4AF37, #B8962E);
             transition: width 0.3s ease;
         }
         .nav-links a:hover::after {
@@ -496,7 +496,7 @@
             position: absolute;
             width: 4px;
             height: 4px;
-            background: radial-gradient(circle, rgba(212,175,55,0.8), transparent);
+            background: radial-gradient(circle, rgba(212,175,55,0.4), transparent);
             border-radius: 50%;
             animation: float 15s infinite;
         }
