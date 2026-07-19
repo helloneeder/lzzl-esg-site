@@ -10,11 +10,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root { 
-            --gold: #D4AF37; 
-            --gold-dark: #B8962E; 
-            --gold-light: #F5E6A3;
-            --emerald: #B8962E;
-            --burgundy: #D4AF37;
+            --gold: #C4A76B; 
+            --gold-dark: #A68B5B; 
+            --gold-light: #F0E6D0;
+            --emerald: #A68B5B;
+            --burgundy: #C4A76B;
             --platinum: linear-gradient(135deg, #E8E8E8, #C0C0C0, #A8A8A8);
         }
         body { 
@@ -26,7 +26,7 @@
         }
         .font-serif { font-family: "Playfair Display", Georgia, 'Times New Roman', serif; }
         .text-gold { 
-            background: linear-gradient(90deg, #FFE066, #D4AF37, #B8962E); 
+            background: linear-gradient(90deg, #E8D8B0, #C4A76B, #A68B5B); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
@@ -37,7 +37,7 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(150px);
             opacity: 0.08;
             pointer-events: none;
             z-index: 0;
@@ -59,7 +59,7 @@
         }
         
         .btn-gold { 
-            background: linear-gradient(135deg, #F5E6A3, #D4AF37, #B8960C); 
+            background: linear-gradient(135deg, #F0E6D0, #C4A76B, #B8960C); 
             color: #F5F5F0; 
             padding: 14px 36px; 
             border: none; 
@@ -89,17 +89,17 @@
         }
         .btn-outline { 
             background: transparent; 
-            border: 1px solid #D4AF37; 
-            color: #D4AF37; 
+            border: 1px solid #C4A76B; 
+            color: #C4A76B; 
             padding: 14px 36px;
             transition: all 0.3s ease;
         }
         .btn-outline:hover {
-            background: #D4AF37;
+            background: #C4A76B;
             color: #F5F5F0;
         }
         .btn-emerald {
-            background: linear-gradient(135deg, #E5C96B, #B8962E);
+            background: linear-gradient(135deg, #DCC898, #A68B5B);
             color: #333333;
             padding: 8px 16px;
             border: none;
@@ -107,7 +107,7 @@
             letter-spacing: 0.05em;
         }
         .btn-burgundy {
-            background: linear-gradient(135deg, #D4AF37, #D4AF37);
+            background: linear-gradient(135deg, #C4A76B, #C4A76B);
             color: #333333;
             padding: 8px 16px;
             border: none;
@@ -194,15 +194,15 @@
             border-radius: 2px;
         }
         .badge-featured {
-            background: linear-gradient(135deg, #F5E6A3, #D4AF37);
+            background: linear-gradient(135deg, #F0E6D0, #C4A76B);
             color: #F5F5F0;
         }
         .badge-new {
-            background: linear-gradient(135deg, #E5C96B, #B8962E);
+            background: linear-gradient(135deg, #DCC898, #A68B5B);
             color: #333333;
         }
         .badge-limited {
-            background: linear-gradient(135deg, #D4AF37, #D4AF37);
+            background: linear-gradient(135deg, #C4A76B, #C4A76B);
             color: #333333;
         }
         .badge-diamond {
@@ -213,7 +213,7 @@
         .grid-3 { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-            gap: 40px; 
+            gap: 60px; 
         }
         .grid-4 { 
             display: grid; 
@@ -240,8 +240,8 @@
             transition: height 0.3s ease;
         }
         .card.diamond::before { background: var(--platinum); }
-        .card.emerald::before { background: linear-gradient(90deg, #E5C96B, #B8962E); }
-        .card.gold::before { background: linear-gradient(90deg, #FFE066, #D4AF37, #B8962E); }
+        .card.emerald::before { background: linear-gradient(90deg, #DCC898, #A68B5B); }
+        .card.gold::before { background: linear-gradient(90deg, #E8D8B0, #C4A76B, #A68B5B); }
         .card:hover::before {
             height: 6px;
         }
@@ -265,7 +265,7 @@
         
         /* 产品卡片 - 彩色悬停效果 */
         .product-card { 
-            background: linear-gradient(135deg, #FDF8F0, #F8F0E3); box-shadow: inset 0 2px 20px rgba(212,175,55,0.1); 
+            background: linear-gradient(135deg, #FDF8F0, #F8F0E3); ; 
             padding: 20px; 
             transition: all 0.4s ease;
             position: relative;
@@ -295,7 +295,7 @@
             transform: scale(1.05);
         }
         .price { 
-            color: #D4AF37; 
+            color: #C4A76B; 
             margin-top: 8px; 
             letter-spacing: 0.05em; 
         }
@@ -304,7 +304,7 @@
             display: grid; 
             grid-template-columns: 1fr 1fr; 
             min-height: 600px; 
-            background: linear-gradient(135deg, #FDF8F0, #F8F0E3); box-shadow: inset 0 2px 20px rgba(212,175,55,0.1); 
+            background: linear-gradient(135deg, #FDF8F0, #F8F0E3); ; 
         }
         .about-image {
             position: relative;
@@ -363,7 +363,7 @@
             margin-bottom: 16px; 
         }
         .footer h4 { 
-            color: #D4AF37; 
+            color: #C4A76B; 
             font-size: 0.875rem; 
             letter-spacing: 0.1em; 
             text-transform: uppercase; 
@@ -386,7 +386,7 @@
             transition: color 0.3s ease;
         }
         .footer a:hover { 
-            color: #D4AF37; 
+            color: #C4A76B; 
         }
         .footer-bottom { 
             max-width: 1200px; 
@@ -439,7 +439,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #D4AF37, #B8962E);
+            background: linear-gradient(90deg, #C4A76B, #A68B5B);
             transition: width 0.3s ease;
         }
         .nav-links a:hover::after {
@@ -458,7 +458,7 @@
             display: block; 
             width: 24px; 
             height: 40px; 
-            border: 2px solid #D4AF37; 
+            border: 2px solid #C4A76B; 
             border-radius: 12px; 
             position: relative; 
         }
@@ -470,7 +470,7 @@
             transform: translateX(-50%); 
             width: 4px; 
             height: 8px; 
-            background: linear-gradient(180deg, #F5E6A3, #D4AF37); 
+            background: linear-gradient(180deg, #F0E6D0, #C4A76B); 
             border-radius: 2px; 
             animation: scroll 2s infinite; 
         }
@@ -514,7 +514,7 @@
             .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 20px; } 
             .about { grid-template-columns: 1fr; } 
             .about-content { padding: 60px 20px; } 
-            .footer-content { grid-template-columns: 1fr; gap: 40px; } 
+            .footer-content { grid-template-columns: 1fr; gap: 60px; } 
             .nav-links { display: none; }
             .ambient-light { display: none; }
         }
