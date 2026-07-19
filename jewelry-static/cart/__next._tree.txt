@@ -1,9 +1,0 @@
-:HL["/jewelry-static/_next/static/chunks/28_rh6on84eh4.css","style"]
-:HL["/jewelry-static/_next/static/chunks/1t5co3xksx55s.css","style"]
-:HL["/jewelry-static/_next/static/chunks/0b79s_1dmgjr5.css","style"]
-:HL["/jewelry-static/_next/static/chunks/2ry2wn3hvqb-c.css","style"]
-:HL["/jewelry-static/_next/static/media/2a65768255d6b625-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/jewelry-static/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/jewelry-static/_next/static/media/a62dbdd646e89cfa-s.p.1gyhrhf92e9m1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/jewelry-static/_next/static/media/fb4edce8a3cbfef3-s.p.3ep0ejxd-rul1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"cart","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"FW_vQgRiG834ZTFwfPSSx"}
