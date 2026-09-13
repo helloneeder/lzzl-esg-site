@@ -65,11 +65,10 @@ npx serve .
 lzzl-esg-site/
 ├── index.html          # 首页
 ├── cases.html          # 案例页
-├── jewelry-static/     # ⚠️ 历史遗留：珠宝站早期单文件原型，不属于本站
-│   └── index.html      # 待归档/迁移，请勿部署到生产环境
+│   └──（已移除，见历史提交）
+
 └── README.md
 ```
 
-**注意**：`jewelry-static/` 是珠宝官网的早期单文件原型，与 ESG 官网无关。
-正式部署时请排除此目录，避免误部署。
+**注意**：历史版本中的 `jewelry-static/` 目录已从仓库移除。
 珠宝站代码已迁移到独立仓库：https://github.com/helloneeder/infa-jewelry
