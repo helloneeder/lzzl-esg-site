@@ -1,6 +1,24 @@
 # lzzl-esg-site
 
-凌朝智绿官方静态网站。
+凌朝智绿官方静态网站（2026-11-18 起为合伙人定稿版，墨绿+金主题单页）。
+旧版（亮绿主题，index/cases 两页）保留在分支 `backup/old-site-20261118` 与 tag `pre-replace-20261118`。
+
+## 当前结构
+
+```
+index.html        # 单页官网（业务体系/产品服务/凌绿智报/案例样本/碳价值/飞轮/合规/联系）
+assets/           # logo.png / logo-en.png
+esg-sample.pdf    # ESG 报告样本
+sample-cover.png  # 样本封面图
+_redirects        # Cloudflare Pages：/cases、/cases.html 301 到首页
+```
+
+部署：Cloudflare Pages，纯静态零构建，直接上传目录或整包 zip。
+
+---
+
+# 历史说明（旧版）
+
 
 ## 技术栈
 

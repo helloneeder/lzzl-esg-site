@@ -1,1140 +1,381 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>凌朝智绿 - 让ESG变得简单可落地</title>
-    <style>
-        :root {
-            --primary: #15803d;
-            --primary-dark: #166534;
-            --primary-light: #22c55e;
-            --secondary: #1e40af;
-            --secondary-light: #3b82f6;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --white: #ffffff;
-            --bg-light: #f8fafc;
-            --bg-offset: #f1f5f9;
-            --border: #e2e8f0;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-        
-        /* 导航栏 */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-        
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            font-size: 1.75rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .nav-cta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-        
-        .btn-small {
-            padding: 0.5rem 1.25rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
-        }
-        
-        .btn-secondary {
-            background: var(--white);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background: #f0fdf4;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Hero 区域 */
-        .hero {
-            background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 50%, #f0fdf4 100%);
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(30, 64, 175, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .hero-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--text-dark);
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-large {
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* 数字展示区 */
-        .stats-section {
-            background: var(--white);
-            padding: 3rem 2rem;
-            margin-top: -3rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .stats-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-number span {
-            font-size: 1.5rem;
-        }
-        
-        .stat-label {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        
-        /* 区块通用 */
-        .section {
-            padding: 5rem 2rem;
-        }
-        
-        .section-bg {
-            background: var(--bg-light);
-        }
-        
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-        
-        .section-title {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-        
-        .section-subtitle {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* 产品服务卡片 */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-        
-        .service-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary-light);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.25rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-            line-height: 1.6;
-        }
-        
-        .service-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-features li {
-            padding: 0.35rem 0;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .service-features li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .service-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            transition: gap 0.2s;
-        }
-        
-        .service-link:hover {
-            gap: 0.6rem;
-        }
-        
-        /* 为什么选择我们 */
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-        
-        .why-us-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            display: flex;
-            gap: 1.5rem;
-            transition: all 0.3s;
-        }
-        
-        .why-us-card:hover {
-            box-shadow: var(--shadow);
-            border-color: var(--primary-light);
-        }
-        
-        .why-us-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .why-us-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        
-        .why-us-content p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        /* 行业解决方案 */
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-        
-        .industry-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .industry-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-        
-        .industry-icon {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .industry-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        
-        .industry-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        
-        .industry-tag {
-            background: var(--bg-light);
-            color: var(--text-light);
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        /* 数据平台 */
-        .platform-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 5rem 2rem;
-            border-radius: 20px;
-            margin: 0 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .platform-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-        }
-        
-        .platform-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .platform-section h2 {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .platform-section p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-        
-        .platform-features {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .platform-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .platform-cta {
-            background: white;
-            color: var(--primary);
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            display: inline-block;
-            transition: all 0.2s;
-        }
-        
-        .platform-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-        
-        /* CTA 区域 */
-        .cta-section {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-        
-        .cta-section p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        /* 页脚 */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-        
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-brand {
-            max-width: 300px;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        
-        .footer-column h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-light);
-        }
-        
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            color: rgba(255,255,255,0.7);
-            font-size: 1.25rem;
-            transition: color 0.2s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-light);
-        }
-        
-        /* 响应式 */
-        @media (max-width: 1024px) {
-            .services-grid,
-            .industries-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .footer-brand {
-                grid-column: 1 / -1;
-                max-width: none;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links,
-            .nav-cta {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .why-us-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-grid,
-            .industries-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .section-title {
-                font-size: 1.75rem;
-            }
-            
-            .platform-section {
-                margin: 0 1rem;
-                padding: 3rem 1.5rem;
-            }
-            
-            .platform-features {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn-large {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>凌朝智绿科技有限公司 — ESG × AI · 让每一份碳数据都成为企业的资产</title>
+<meta name="description" content="凌朝智绿科技有限公司：以ESG+AI为核心的SaaS服务商。凌绿智报帮中小企业低成本完成ESG报告与碳数据管理，后期延伸至碳权开发与碳数据产品，从一份报告到碳资产。">
+<style>
+:root{
+  --dark:#0B2B20; --deep:#123B2C; --green:#1A4A37; --mid:#B08D3E;
+  --gold:#c9a961; --gold-l:#e3cd93; --ink:#1A4A37; --mut:#6E6A5E;
+  --bg:#F7F5F0; --card:#ffffff; --line:#E6E1D4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC",sans-serif;color:var(--ink);background:var(--bg);line-height:1.8}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h2.sec-t{font-size:30px;color:var(--deep);margin-bottom:8px;font-weight:700}
+.sec-s{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:10px;font-weight:600}
+.sec-d{color:var(--mut);max-width:760px;margin-bottom:44px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:99;background:rgba(11,43,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,169,97,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600;font-size:17px}
+.brand img{width:36px;height:36px;object-fit:contain}
+.nav-links{display:flex;gap:24px;font-size:14.5px;color:#D8D2C4}
+.nav-links a:hover{color:var(--gold-l)}
+.nav-cta{background:var(--gold);color:var(--dark)!important;padding:7px 18px;border-radius:20px;font-weight:600}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--dark) 0%,var(--deep) 55%,#2A5C46 100%);color:#fff;padding:150px 0 90px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-140px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,97,.18),transparent 70%)}
+.hero .wrap{display:flex;align-items:center;gap:56px;flex-wrap:wrap;position:relative;z-index:1}
+.hero-txt{flex:1.2;min-width:300px}
+.hero-logo{flex:.8;min-width:220px;text-align:center}
+.hero-logo img{width:340px;object-fit:contain;filter:drop-shadow(0 14px 44px rgba(0,0,0,.5))}
+.hero h1{font-size:42px;line-height:1.3;margin-bottom:18px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#E3CD93,#C9A961);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:#C8C2B4;font-size:17px;max-width:560px;margin-bottom:32px}
+.btn{display:inline-block;padding:13px 32px;border-radius:26px;font-weight:600;font-size:15.5px;transition:.2s}
+.btn-g{background:linear-gradient(90deg,#B08D3E,#C9A961);color:#fff;margin-right:14px}
+.btn-g:hover{background:linear-gradient(90deg,#C9A961,#E3CD93)}
+.btn-o{border:1px solid rgba(255,255,255,.4);color:#fff}
+.btn-o:hover{border-color:var(--gold-l);color:var(--gold-l)}
+.hero-stats{display:flex;gap:38px;margin-top:52px;flex-wrap:wrap}
+.hstat b{display:block;font-size:26px;color:var(--gold-l)}
+.hstat span{font-size:13px;color:#8A8578}
+
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:900px){.grid3,.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid3,.grid4{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 24px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.12)}
+.card .ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--mid));color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.card h3{font-size:18px;color:var(--deep);margin-bottom:8px}
+.card p{font-size:14px;color:var(--mut)}
+.card ul{list-style:none;margin-top:12px;font-size:13.5px;color:var(--mut)}
+.card ul li{padding:3px 0 3px 16px;position:relative}
+.card ul li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.tag{display:inline-block;background:#F1EDE2;color:var(--green);font-size:12px;padding:2px 10px;border-radius:10px;margin-bottom:10px}
+
+/* industry */
+.ind{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 22px;transition:.25s}
+.ind:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.12)}
+.ind h3{font-size:17px;color:var(--deep);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:#F1EDE2;color:var(--green);font-size:12.5px;padding:3px 12px;border-radius:12px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 26px;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:18px;right:22px;font-size:34px;font-weight:800;color:#EAE5D8}
+.step h3{color:var(--deep);font-size:17px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--mut)}
+
+/* pricing */
+.price{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px 26px;text-align:center;position:relative}
+.price.hot{border:2px solid var(--gold)}
+.price .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:12px;font-weight:700;padding:3px 16px;border-radius:12px}
+.price h3{color:var(--deep);font-size:17px}
+.price .num{font-size:32px;color:var(--green);font-weight:800;margin:12px 0 4px}
+.price .num small{font-size:14px;color:var(--mut);font-weight:400}
+.price p{font-size:13.5px;color:var(--mut)}
+
+/* sample */
+.sample{display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+@media(max-width:820px){.sample{grid-template-columns:1fr}}
+.sample img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+.sample .st{color:var(--mid);font-size:12.5px;font-weight:700;letter-spacing:2px;margin-bottom:8px}
+.sample h3{font-size:21px;color:var(--deep);margin-bottom:6px}
+.sample p{font-size:14px;color:var(--mut);margin-bottom:20px}
+
+/* flywheel */
+.fly{background:linear-gradient(150deg,var(--deep),var(--dark));color:#fff}
+.fly h2.sec-t{color:#fff}
+.fly .sec-d{color:#a9c2ad}
+.wheel{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin-top:10px}
+.wnode{background:rgba(255,255,255,.08);border:1px solid rgba(201,169,97,.4);border-radius:12px;padding:14px 18px;font-size:14px;color:#e8f0e6;max-width:200px}
+.wnode b{color:var(--gold-l);display:block;font-size:15px}
+.warrow{color:var(--gold);font-size:20px;font-weight:700}
+
+/* carbon band */
+.carbon{background:linear-gradient(160deg,#0B2B20,#123B2C);color:#fff;text-align:center}
+.carbon .big{font-size:34px;color:var(--gold-l);font-weight:800;margin:6px 0 22px}
+.carbon p{color:#C8C2B4;max-width:820px;margin:0 auto 10px;font-size:15.5px}
+.carbon .vs{display:flex;justify-content:center;gap:60px;margin:34px 0;flex-wrap:wrap}
+.carbon .vs div b{display:block;font-size:40px;color:#fff}
+.carbon .vs div span{color:#8A8578;font-size:13px}
+
+/* compliance */
+.redline{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:820px){.redline{grid-template-columns:1fr 1fr}}
+.rl{background:#fbf6ea;border:1px solid #e8dcc0;border-radius:12px;padding:20px;text-align:center;font-weight:600;color:#7a5c1e;font-size:15px}
+
+/* contact */
+.contact{background:linear-gradient(150deg,var(--deep),var(--dark));color:#fff;text-align:center}
+.contact h2{color:#fff}
+.contact p{color:#C8C2B4;margin-bottom:26px}
+.contact .mail{font-size:22px;color:var(--gold-l);font-weight:700;letter-spacing:.5px}
+.contact .who{color:#8A8578;font-size:14px;margin-top:10px}
+
+footer{background:#082018;color:#8A8578;padding:30px 0;font-size:13px;text-align:center}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-icon">🌿</span>
-                <span>凌朝智绿</span>
-            </a>
-            
-            <ul class="nav-links">
-                <li><a href="#services">产品服务</a></li>
-                <li><a href="#solutions">解决方案</a></li>
-                <li><a href="cases.html">成功案例</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="https://questionnaire.lzzl-esg.com/" target="_blank">数据平台</a></li>
-            </ul>
-            
-            <div class="nav-cta">
-                <a href="#" class="btn-small btn-secondary">登录</a>
-                <a href="#contact" class="btn-small btn-primary">立即咨询</a>
-            </div>
-            
-            <div class="mobile-menu-btn">☰</div>
-        </div>
-    </nav>
-    
-    <!-- Hero 区域 -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-badge">🏆 中小企业 ESG 服务专家</div>
-            <h1>让 <span>ESG</span> 变得<br>简单、可落地</h1>
-            <p>为中小企业提供专业的 ESG 报告编制、数据管理与合规解决方案，帮助您顺利通过供应链审查、投标资质核验、品牌价值提升</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-large btn-primary">
-                    🚀 免费咨询
-                </a>
-                <a href="#platform" class="btn-large btn-secondary">
-                    📊 查看数据平台
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 数字展示区 -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number">500<span>+</span></div>
-                <div class="stat-label">服务企业</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">30<span>+</span></div>
-                <div class="stat-label">行业覆盖</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">98<span>%</span></div>
-                <div class="stat-label">客户满意度</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100<span>%</span></div>
-                <div class="stat-label">报告通过率</div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 产品服务 -->
-    <section id="services" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">我们的产品服务</h2>
-                <p class="section-subtitle">全方位的 ESG 解决方案，满足您不同阶段的需求</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>ESG 报告编制</h3>
-                    <p>专业团队为您定制符合国际标准的 ESG 报告，涵盖环境、社会、治理三大维度</p>
-                    <ul class="service-features">
-                        <li>GRI/TCFD 标准对齐</li>
-                        <li>证据链完整可追溯</li>
-                        <li>7-10个工作日交付</li>
-                        <li>支持多语言版本</li>
-                    </ul>
-                    <a href="#" class="service-link">了解更多 →</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>数据缺口分析</h3>
-                    <p>AI 智能识别您的 ESG 数据缺口，提供优先级排序和补数建议方案</p>
-                    <ul class="service-features">
-                        <li>智能扫描诊断</li>
-                        <li>缺口优先级排序</li>
-                        <li>行动路线图</li>
-                        <li>持续跟踪改进</li>
-                    </ul>
-                    <a href="#" class="service-link">了解更多 →</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>碳管理工具</h3>
-                    <p>一站式碳排放核算、追踪和管理平台，助力您实现碳中和目标</p>
-                    <ul class="service-features">
-                        <li>范围1/2/3核算</li>
-                        <li>减排目标设定</li>
-                        <li>实时数据追踪</li>
-                        <li>可视化仪表盘</li>
-                    </ul>
-                    <a href="#" class="service-link">了解更多 →</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>供应链合规</h3>
-                    <p>帮助您满足客户和投资方的 ESG 合规要求，提升供应链竞争力</p>
-                    <ul class="service-features">
-                        <li>供应商评估体系</li>
-                        <li>一键生成合规报告</li>
-                        <li>批量数据收集</li>
-                        <li>风险预警机制</li>
-                    </ul>
-                    <a href="#" class="service-link">了解更多 →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 为什么选择我们 -->
-    <section class="section section-bg">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">为什么选择凌朝智绿</h2>
-                <p class="section-subtitle">专业、高效、可信赖，我们用实力说话</p>
-            </div>
-            
-            <div class="why-us-grid">
-                <div class="why-us-card">
-                    <div class="why-us-icon">👨‍💼</div>
-                    <div class="why-us-content">
-                        <h3>专业团队</h3>
-                        <p>深耕 ESG 领域，平均 8 年以上行业经验，熟悉各行业最佳实践和监管要求</p>
-                    </div>
-                </div>
-                
-                <div class="why-us-card">
-                    <div class="why-us-icon">⚡</div>
-                    <div class="why-us-content">
-                        <h3>快速交付</h3>
-                        <p>7-10 个工作日完成报告编制，加急服务 3 天出稿，不耽误您的投标和审查节点</p>
-                    </div>
-                </div>
-                
-                <div class="why-us-card">
-                    <div class="why-us-icon">🔗</div>
-                    <div class="why-us-content">
-                        <h3>证据链完整</h3>
-                        <p>所有陈述均可追溯到原始材料，符合监管审查标准，让您的报告经得起推敲</p>
-                    </div>
-                </div>
-                
-                <div class="why-us-card">
-                    <div class="why-us-icon">🔄</div>
-                    <div class="why-us-content">
-                        <h3>持续更新</h3>
-                        <p>半年周期服务模式，帮助您持续追踪和改进 ESG 表现，建立长期竞争优势</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 行业解决方案 -->
-    <section id="solutions" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">行业解决方案</h2>
-                <p class="section-subtitle">深耕垂直行业，提供更贴合您业务的 ESG 解决方案</p>
-            </div>
-            
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <div class="industry-icon">🏢</div>
-                    <h3>物业运营</h3>
-                    <div class="industry-tags">
-                        <span class="industry-tag">能耗管理</span>
-                        <span class="industry-tag">社区治理</span>
-                        <span class="industry-tag">绿色建筑</span>
-                    </div>
-                </div>
-                
-                <div class="industry-card">
-                    <div class="industry-icon">👮</div>
-                    <h3>保安服务</h3>
-                    <div class="industry-tags">
-                        <span class="industry-tag">人员管理</span>
-                        <span class="industry-tag">安全合规</span>
-                        <span class="industry-tag">职业健康</span>
-                    </div>
-                </div>
-                
-                <div class="industry-card">
-                    <div class="industry-icon">👥</div>
-                    <h3>人力服务</h3>
-                    <div class="industry-tags">
-                        <span class="industry-tag">用工合规</span>
-                        <span class="industry-tag">员工发展</span>
-                        <span class="industry-tag">多元化</span>
-                    </div>
-                </div>
-                
-                <div class="industry-card">
-                    <div class="industry-icon">🏨</div>
-                    <h3>酒店文旅</h3>
-                    <div class="industry-tags">
-                        <span class="industry-tag">碳排放管理</span>
-                        <span class="industry-tag">可持续运营</span>
-                        <span class="industry-tag">宾客体验</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 数据平台 -->
-    <section id="platform" class="section">
-        <div class="container">
-            <div class="platform-section">
-                <div class="platform-content">
-                    <h2>🚀 凌朝智绿 ESG 数据平台</h2>
-                    <p>一站式 ESG 数据管理、分析、报告生成平台。支持多用户协作、版本管理、证据链追踪，让您的 ESG 工作更高效、更专业。</p>
-                    <div class="platform-features">
-                        <div class="platform-feature">✓ AI 智能分析</div>
-                        <div class="platform-feature">✓ 多用户协作</div>
-                        <div class="platform-feature">✓ 版本管理</div>
-                        <div class="platform-feature">✓ 证据链追踪</div>
-                    </div>
-                    <a href="https://questionnaire.lzzl-esg.com/" target="_blank" class="platform-cta">
-                        立即体验 →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA 联系区域 -->
-    <section id="contact" class="cta-section">
-        <div class="cta-content">
-            <h2>准备好开始您的 ESG 之旅了吗？</h2>
-            <p>免费获取您的专属 ESG 成熟度评估报告，让我们的专家为您规划最佳路径</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn-large btn-primary">
-                    📞 立即预约咨询
-                </a>
-                <a href="tel:400-xxx-xxxx" class="btn-large btn-secondary">
-                    📱 电话咨询
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 页脚 -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-icon">🌿</span>
-                    <span>凌朝智绿</span>
-                </div>
-                <p>让 ESG 变得简单可落地。为中小企业提供专业的 ESG 报告编制、数据管理与合规解决方案。</p>
-            </div>
-            
-            <div class="footer-column">
-                <h4>产品服务</h4>
-                <ul class="footer-links">
-                    <li><a href="#services">ESG 报告编制</a></li>
-                    <li><a href="#services">数据缺口分析</a></li>
-                    <li><a href="#services">碳管理工具</a></li>
-                    <li><a href="#services">供应链合规</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>解决方案</h4>
-                <ul class="footer-links">
-                    <li><a href="#solutions">物业运营</a></li>
-                    <li><a href="#solutions">保安服务</a></li>
-                    <li><a href="#solutions">人力服务</a></li>
-                    <li><a href="#solutions">酒店文旅</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>关于我们</h4>
-                <ul class="footer-links">
-                    <li><a href="cases.html">成功案例</a></li>
-                    <li><a href="#about">公司介绍</a></li>
-                    <li><a href="#">团队成员</a></li>
-                    <li><a href="#">新闻动态</a></li>
-                    <li><a href="#">加入我们</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>联系方式</h4>
-                <ul class="footer-links">
-                    <li><a href="tel:400-xxx-xxxx">📞 400-xxx-xxxx</a></li>
-                    <li><a href="mailto:contact@lzzl-esg.com">📧 contact@lzzl-esg.com</a></li>
-                    <li><a href="#">📍 上海市浦东新区</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2026 凌朝智绿 版权所有</p>
-            <div class="social-links">
-                <a href="#">💬</a>
-                <a href="#">📱</a>
-                <a href="#">🔗</a>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
-            }
-        });
-        
-        // 数字动画
-        function animateNumbers() {
-            const stats = document.querySelectorAll('.stat-number');
-            stats.forEach(stat => {
-                const text = stat.textContent;
-                const number = parseInt(text);
-                const suffix = text.replace(/[0-9]/g, '');
-                
-                let current = 0;
-                const increment = number / 30;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= number) {
-                        stat.textContent = number + suffix;
-                        clearInterval(timer);
-                    } else {
-                        stat.textContent = Math.floor(current) + suffix;
-                    }
-                }, 30);
-            });
-        }
-        
-        // 当元素进入视口时触发动画
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateNumbers();
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        const statsSection = document.querySelector('.stats-container');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
-    </script>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="凌朝智绿Logo">凌朝智绿</a>
+    <div class="nav-links">
+      <a href="#business">业务体系</a>
+      <a href="#service">产品服务</a>
+      <a href="#product">凌绿智报</a>
+      <a href="#sample">案例样本</a>
+      <a href="#carbon">碳的价值</a>
+      <a href="#compliance">合规底线</a>
+      <a class="nav-cta" href="#contact">联系我们</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-txt">
+      <h1>从一份报告，<br>到<em>碳资产</em>。</h1>
+      <p class="sub">凌朝智绿以「ESG × AI」为核心，用中小企业用得起的工具，帮企业把碳管清楚——碳管理、碳交易、碳权、碳数据，谁把碳算清，谁就握住下一个十年最确定的现金流。</p>
+      <a class="btn btn-g" href="#product">了解凌绿智报</a>
+      <a class="btn btn-o" href="#contact">预约演示</a>
+      <div class="hero-stats">
+        <div class="hstat"><b>2025.1</b><span>港交所新版ESG守则生效</span></div>
+        <div class="hstat"><b>2026</b><span>A股首份法定ESG报告 · CBAM征收</span></div>
+        <div class="hstat"><b>80亿吨</b><span>全国碳市场覆盖排放量</span></div>
+        <div class="hstat"><b>8行业</b><span>2027年前碳市场扩容范围</span></div>
+      </div>
+    </div>
+    <div class="hero-logo"><img src="assets/logo-en.png" alt="凌朝智绿 Lingchao IntelGreen"></div>
+  </div>
+</header>
+
+<section id="business">
+  <div class="wrap">
+    <div class="sec-s">BUSINESS MODEL</div>
+    <h2 class="sec-t">三道生意，加一个连接器</h2>
+    <p class="sec-d">真正赚钱的永远不是服务，而是碳本身。报告是入口，数据是资产，碳交易是终局——每一层都为下一层铺路。</p>
+    <div class="grid4">
+      <div class="card">
+        <span class="tag">第一道 · 现在</span>
+        <div class="ic">📄</div>
+        <h3>AI生成ESG报告</h3>
+        <p>「凌绿智报」：企业上传资料，AI按港交所／沪深北／GRI标准生成报告，人工复核后交付。现金流与数据入口。</p>
+      </div>
+      <div class="card">
+        <span class="tag">第二道 · 第2年起</span>
+        <div class="ic">📊</div>
+        <h3>碳管理</h3>
+        <p>碳数据台账、ESG培训与诊断、项目策划与IPO上市配套。把一次性报告生意，变成连续订阅生意。</p>
+      </div>
+      <div class="card">
+        <span class="tag">连接器 · 全程</span>
+        <div class="ic">🔗</div>
+        <h3>资源链接</h3>
+        <p>粤港双向撮合、政府与NGO项目对接、供应链绿色协作。每一次链接，网络就多一个节点，碳数据就更密一分。</p>
+      </div>
+      <div class="card">
+        <span class="tag">第三道 · 第3年起</span>
+        <div class="ic">♻️</div>
+        <h3>碳交易 · 碳权 · 碳数据</h3>
+        <p>碳权开发服务、行业碳数据产品、碳交易技术服务。大钱在这里——资产分成与数据产品，决定公司值多少钱。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="service" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-s">SERVICES</div>
+    <h2 class="sec-t">产品服务</h2>
+    <p class="sec-d">全方位的 ESG 解决方案，满足企业不同阶段的需求——从第一次披露，到供应链审核，再到碳资产管理。</p>
+    <div class="grid4">
+      <div class="card">
+        <div class="ic">📝</div>
+        <h3>ESG 报告编制</h3>
+        <p>按港交所／沪深北／GRI 标准定制，三大维度全覆盖。</p>
+        <ul>
+          <li>多披露标准对齐</li>
+          <li>证据链完整可追溯</li>
+          <li>7-10 个工作日交付</li>
+          <li>中英繁三语版本</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ic">🔍</div>
+        <h3>数据缺口诊断</h3>
+        <p>AI 智能识别 ESG 数据缺口，给出补数优先级与路线图。</p>
+        <ul>
+          <li>智能扫描诊断</li>
+          <li>缺口优先级排序</li>
+          <li>行动路线图</li>
+          <li>持续跟踪改进</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ic">📊</div>
+        <h3>碳管理工具</h3>
+        <p>一站式碳排放核算、追踪和管理，迈向碳中和。</p>
+        <ul>
+          <li>范围 1/2/3 核算</li>
+          <li>减排目标设定</li>
+          <li>碳数据台账</li>
+          <li>可视化仪表盘</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ic">🎯</div>
+        <h3>供应链合规</h3>
+        <p>应对客户与投资方的 ESG 审核要求，提升供应链竞争力。</p>
+        <ul>
+          <li>供应商评估体系</li>
+          <li>合规材料生成</li>
+          <li>批量数据收集</li>
+          <li>风险预警机制</li>
+        </ul>
+      </div>
+    </div>
+    <div style="height:44px"></div>
+    <div class="sec-s">INDUSTRIES</div>
+    <h2 class="sec-t">行业解决方案</h2>
+    <p class="sec-d">深耕垂直行业，提供更贴合业务的 ESG 解决方案。</p>
+    <div class="grid4">
+      <div class="ind"><h3>🏢 物业运营</h3><div class="chips"><span>能耗管理</span><span>社区治理</span><span>绿色建筑</span></div></div>
+      <div class="ind"><h3>🛡️ 保安服务</h3><div class="chips"><span>人员管理</span><span>安全合规</span><span>职业健康</span></div></div>
+      <div class="ind"><h3>👥 人力服务</h3><div class="chips"><span>用工合规</span><span>员工发展</span><span>多元化</span></div></div>
+      <div class="ind"><h3>🏨 酒店文旅</h3><div class="chips"><span>碳排放管理</span><span>可持续运营</span><span>宾客体验</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="product">
+  <div class="wrap">
+    <div class="sec-s">PRODUCT</div>
+    <h2 class="sec-t">凌绿智报：三步，拿到一份能用的ESG报告</h2>
+    <p class="sec-d">传统咨询一份ESG报告报价5万-30万元、周期两三个月。我们把价格打到十分之一，把周期缩到以天计。</p>
+    <div class="steps">
+      <div class="step"><h3>按清单上传资料</h3><p>营业执照、电费水费单、社保人数、制度文件。清单按行业自动生成，企业照着准备就行。</p></div>
+      <div class="step"><h3>AI辅助生成报告</h3><p>按企业选择的标准（港交所ESG守则／沪深北指引／GRI）匹配指标、整理数据、生成正文，支持中英繁三语。</p></div>
+      <div class="step"><h3>人工复核后交付</h3><p>关键数据与结论由人复核，每个数字都能回溯到原始凭证，标注待确认项后导出正式版。</p></div>
+    </div>
+    <div style="height:44px"></div>
+    <div class="grid4">
+      <div class="price"><h3>SaaS 基础版</h3><div class="num">¥6,800<small>/年</small></div><p>单一披露标准 · 3个账号<br>适合首次披露的小企业</p></div>
+      <div class="price hot"><div class="badge">最受欢迎</div><h3>SaaS 专业版</h3><div class="num">¥19,800<small>/年</small></div><p>多标准切换 · 10个账号<br>中英繁三语 · 数据台账</p></div>
+      <div class="price"><h3>ESG报告按篇</h3><div class="num">¥1,500<small>起/篇</small></div><p>顾问式交付 · 按篇幅计价<br>含人工复核与修订</p></div>
+      <div class="price"><h3>培训与工作坊</h3><div class="num">¥199<small>起/人</small></div><p>员工微课 · 管理层定制工作坊<br>ESG与公司治理培训</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sample" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-s">SAMPLE</div>
+    <h2 class="sec-t">案例样本</h2>
+    <p class="sec-d">交付物长什么样，先看样本再决定。以下为标准版样本（演示数据），正式版由复核专家逐条确认后交付。</p>
+    <div class="sample">
+      <img src="sample-cover.png" alt="标准版样本封面">
+      <div>
+        <div class="st">标准版 · 样本</div>
+        <h3>某制造企业 2025 年度可持续发展（ESG）报告</h3>
+        <p>15 页 · 十一章结构 · 含管理层访谈 · 真实场景配图与数据图表 · 港交所指标索引附录（演示数据）</p>
+        <a class="btn btn-g" href="esg-sample.pdf" download>下载完整样本 PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="carbon" class="carbon">
+  <div class="wrap">
+    <div class="sec-s" style="color:var(--gold)">WHY CARBON</div>
+    <h2 class="sec-t" style="color:#fff">同一个「碳」字，两边差近十倍</h2>
+    <div class="vs">
+      <div><b>€70-90</b><span>欧盟碳价 / 吨</span></div>
+      <div style="font-size:40px;color:var(--gold)">⇄</div>
+      <div><b>¥60-90</b><span>中国碳价 / 吨</span></div>
+    </div>
+    <p>CBAM 2026年正式征收，全国碳市场2027年前扩至八大行业，CCER重启让减排项目重新变成可交易的碳权资产，数据资产入表让碳数据本身成为资产。</p>
+    <p>差距会随政策收敛，收敛的方向只有一个：中国企业的碳成本往上走。碳价每向上走一步，企业为碳管理付费的意愿就强一分——而我们已经站好了位置。</p>
+    <div class="big">卖服务是一单一单收钱，卖数据是同一份数据反复收钱。</div>
+  </div>
+</section>
+
+<section id="flywheel" class="fly">
+  <div class="wrap">
+    <div class="sec-s">FLYWHEEL</div>
+    <h2 class="sec-t">三道生意怎么互相喂养</h2>
+    <p class="sec-d">传统碳资产开发公司最大的成本是找项目和收集数据，我们这两项成本接近零——客户是报告业务送上门的，数据是台账里现成的。</p>
+    <div class="wheel">
+      <div class="wnode"><b>报告低价获客</b>企业上传资料即沉淀碳数据</div><span class="warrow">→</span>
+      <div class="wnode"><b>数据连续沉淀</b>年年续费，台账越积越厚</div><span class="warrow">→</span>
+      <div class="wnode"><b>筛出减排潜力</b>转化为碳权开发项目</div><span class="warrow">→</span>
+      <div class="wnode"><b>客户转介绍</b>碳资产收益带来新客</div><span class="warrow">→</span>
+      <div class="wnode"><b>资源链接入网</b>政府、机构、供应商加入</div><span class="warrow">→</span>
+      <div class="wnode"><b>数据产品增值</b>反哺研发，工具更便宜好用</div><span class="warrow">↺</span>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-s">WHY US</div>
+    <h2 class="sec-t">为什么选择凌朝智绿</h2>
+    <p class="sec-d">专业、高效、可信赖，用实力说话。</p>
+    <div class="grid4">
+      <div class="card"><div class="ic">🎓</div><h3>双背景团队</h3><p>ESG 研究 + AI 工程复合背景，报告编制与系统开发一体完成，不用在咨询公司和外包技术之间来回折腾。</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>快速交付</h3><p>标准版 7-10 个工作日完成报告编制，加急服务 3 天出稿，不耽误投标和审查节点。</p></div>
+      <div class="card"><div class="ic">🔗</div><h3>证据链完整</h3><p>所有陈述均可追溯到原始材料，符合监管审查标准，让报告经得起推敲。</p></div>
+      <div class="card"><div class="ic">🔄</div><h3>持续陪伴</h3><p>年度订阅模式，持续追踪和改进 ESG 表现，碳数据台账年年累积，越用越值钱。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="compliance" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-s">COMPLIANCE</div>
+    <h2 class="sec-t">合规不是成本，是卖点</h2>
+    <p class="sec-d">碳市场只为可信的碳付费。数据可溯源、人工复核兜底、不确定性如实披露、与持牌核查机构合作——从产品设计第一天嵌入合规。</p>
+    <div class="redline">
+      <div class="rl">不做碳交易自营</div>
+      <div class="rl">不代持碳配额</div>
+      <div class="rl">不承诺碳资产收益</div>
+      <div class="rl">不为凑指标美化数据</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-s" style="color:var(--gold)">CONTACT</div>
+    <h2 class="sec-t">把每一份碳数据，都变成企业的资产</h2>
+    <p>ESG报告 · 碳数据台账 · 培训工作坊 · 粤港资源对接 · 碳权开发咨询<br>欢迎邮件联系，我们将在1个工作日内回复。</p>
+    <div class="mail">2914500167@qq.com</div>
+    <div class="who">联系人：孙凌霄 ｜ 凌朝智绿科技有限公司 ｜ lzzl-esg.com</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 凌朝智绿科技有限公司 Lingchao IntelGreen Technology Co., Ltd.</span>
+    <span>ESG × AI · 让绿色成为一门好生意</span>
+  </div>
+</footer>
+
 </body>
 </html>
