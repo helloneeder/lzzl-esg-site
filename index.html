@@ -127,8 +127,48 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .contact .mail{font-size:22px;color:var(--gold-l);font-weight:700;letter-spacing:.5px}
 .contact .who{color:#8A8578;font-size:14px;margin-top:10px}
 
-footer{background:#082018;color:#8A8578;padding:30px 0;font-size:13px;text-align:center}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer{background:#082018;color:#8A8578;padding:46px 0 26px;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px}
+footer .fcol h4{color:#D8D2C4;font-size:14px;margin-bottom:12px;font-weight:600}
+footer .fcol a,footer .fcol p{display:block;color:#8A8578;margin-bottom:8px;font-size:13px}
+footer .fcol a:hover{color:var(--gold-l)}
+footer .fbrand{max-width:300px}
+footer .fbrand img{width:34px;height:34px;object-fit:contain;margin-bottom:10px}
+footer .copy{width:100%;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;margin-top:8px;text-align:center;font-size:12.5px;color:#6E6A5E}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+.arch{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 26px}
+.arch h3{color:var(--deep);font-size:18px;margin-bottom:14px}
+.arch .phase{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.arch .phase:last-child{border-bottom:0}
+.arch .phase .dot{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--mid));color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.arch .phase b{color:var(--deep);font-size:14.5px;display:block}
+.arch .phase span{color:var(--mut);font-size:13px}
+
+/* platform */
+.platform{background:linear-gradient(150deg,var(--deep),var(--dark));color:#fff}
+.platform h2.sec-t{color:#fff}
+.platform .sec-d{color:#a9c2ad}
+.pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+@media(max-width:900px){.pf-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pf-grid{grid-template-columns:1fr}}
+.pf{background:rgba(255,255,255,.06);border:1px solid rgba(201,169,97,.35);border-radius:14px;padding:24px 20px}
+.pf .ic{font-size:24px;margin-bottom:12px}
+.pf h3{color:var(--gold-l);font-size:16px;margin-bottom:8px}
+.pf p{color:#C8C2B4;font-size:13.5px}
+.platform .pf-note{margin-top:30px;text-align:center;color:#8A8578;font-size:13px}
+
+/* mobile nav */
+.menu-btn{display:none;background:none;border:none;color:var(--gold-l);font-size:24px;cursor:pointer;padding:4px 8px}
+@media(max-width:900px){
+  .menu-btn{display:block}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(11,43,32,.98);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid rgba(201,169,97,.25)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:13px 24px;font-size:15px}
+  .nav-links a.nav-cta{margin:8px 24px;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -136,15 +176,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <nav>
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/logo.png" alt="凌朝智绿Logo">凌朝智绿</a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#business">业务体系</a>
       <a href="#service">产品服务</a>
       <a href="#product">凌绿智报</a>
       <a href="#sample">案例样本</a>
       <a href="#carbon">碳的价值</a>
       <a href="#compliance">合规底线</a>
+      <a href="#about">关于我们</a>
       <a class="nav-cta" href="#contact">联系我们</a>
     </div>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
   </div>
 </nav>
 
@@ -360,6 +402,42 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </div>
 </section>
 
+<section id="platform" class="platform">
+  <div class="wrap">
+    <div class="sec-s">PLATFORM</div>
+    <h2 class="sec-t">凌朝智绿 ESG 数据平台</h2>
+    <p class="sec-d">一站式 ESG 数据管理、分析与报告生成平台，与「凌绿智报」同源——报告只是输出，平台才是企业碳数据连续沉淀的台账。</p>
+    <div class="pf-grid">
+      <div class="pf"><div class="ic">🤖</div><h3>AI 智能分析</h3><p>自动匹配披露指标、识别数据缺口，生成报告正文与待确认项。</p></div>
+      <div class="pf"><div class="ic">👥</div><h3>多用户协作</h3><p>企业内部多角色协同填报，权限分级，外脑顾问可受邀复核。</p></div>
+      <div class="pf"><div class="ic">🗂️</div><h3>版本管理</h3><p>报告与台账逐年留痕，修改可回溯，年度更新不重来。</p></div>
+      <div class="pf"><div class="ic">🔗</div><h3>证据链追踪</h3><p>每个数字关联原始凭证，报告陈述全部可追溯，经得起监管审查。</p></div>
+    </div>
+    <p class="pf-note">平台网页版与微信小程序持续迭代中，预约演示可提前体验 →</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-s">ABOUT US</div>
+    <h2 class="sec-t">关于凌朝智绿</h2>
+    <p class="sec-d">一家以「ESG × AI」为核心的科技服务公司，从一份中小企业用得起的 ESG 报告切入，终局是让碳数据成为可计价、可交易、可入表的资产。</p>
+    <div class="about-grid">
+      <div class="card">
+        <div class="ic">🌱</div>
+        <h3>我们是谁</h3>
+        <p>ESG 研究与 AI 工程复合背景团队，报告编制与系统开发一体完成。公司已入驻珠海大学生创业孵化基地，完成 Pre 路演，正按「内地运营 → 香港控股」的节奏推进跨境架构。</p>
+      </div>
+      <div class="arch">
+        <h3>香港 × 内地双架构三步走</h3>
+        <div class="phase"><div class="dot">1</div><div><b>现阶段：内地公司运营</b><span>成本低、离客户近，跑通报告与订阅模型</span></div></div>
+        <div class="phase"><div class="dot">2</div><div><b>中期：设立香港公司控股</b><span>对接 TVP 科技券、BUD 专项基金，服务香港客户与境外资金</span></div></div>
+        <div class="phase"><div class="dot">3</div><div><b>长期：握住国际化接口</b><span>CBAM、ISSB、国际碳信用都绕不开香港，为第三道生意铺路</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="sec-s" style="color:var(--gold)">CONTACT</div>
@@ -372,10 +450,45 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 凌朝智绿科技有限公司 Lingchao IntelGreen Technology Co., Ltd.</span>
-    <span>ESG × AI · 让绿色成为一门好生意</span>
+    <div class="fcol fbrand">
+      <img src="assets/logo.png" alt="凌朝智绿 Logo">
+      <p>专注为企业提供 ESG 咨询与数字化解决方案，让 ESG 变得简单、可落地——从一份报告，到碳资产。</p>
+    </div>
+    <div class="fcol">
+      <h4>产品服务</h4>
+      <a href="#service">ESG 报告编制</a>
+      <a href="#service">数据缺口诊断</a>
+      <a href="#service">碳管理工具</a>
+      <a href="#service">供应链合规</a>
+    </div>
+    <div class="fcol">
+      <h4>了解更多</h4>
+      <a href="#product">凌绿智报</a>
+      <a href="#platform">ESG 数据平台</a>
+      <a href="#sample">案例样本</a>
+      <a href="#about">关于我们</a>
+    </div>
+    <div class="fcol">
+      <h4>联系我们</h4>
+      <a href="mailto:2914500167@qq.com">2914500167@qq.com</a>
+      <p>联系人：孙凌霄</p>
+      <p>凌朝智绿科技有限公司</p>
+    </div>
+    <div class="copy">© 2026 凌朝智绿科技有限公司 Lingchao IntelGreen Technology Co., Ltd. · ESG × AI，让绿色成为一门好生意</div>
   </div>
 </footer>
+
+<script>
+// 移动端菜单
+(function(){
+  var btn=document.getElementById('menuBtn'), links=document.getElementById('navLinks');
+  if(!btn||!links) return;
+  btn.addEventListener('click',function(){ links.classList.toggle('open'); });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){ links.classList.remove('open'); });
+  });
+})();
+</script>
 
 </body>
 </html>
